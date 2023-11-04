@@ -44,11 +44,11 @@ trait SortableTrait
      *
      * @return QueryBuilder
      */
-    public function scopeSorted($query)
+    public function scopeSorted($query,$arrangement = 'asc')
     {
         $sortableField = static::getSortableField();
 
-        return $query->orderBy($sortableField);
+        return $query->orderBy($sortableField, $arrangement);
     }
 
     /**
